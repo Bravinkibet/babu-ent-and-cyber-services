@@ -1,13 +1,21 @@
 import React from 'react';
 
 function OnlineServices() {
+  const onlineServices = [
+    "Browsing the Internet",
+    "KRA (Kenya Revenue Authority) services",
+    "Passport application assistance",
+    "Online form filling assistance",
+    "Email services",
+  ];
+
   return (
-    <div>
+    <div className="online-services">
       <h2>Online Services:</h2>
       <ul>
-        <li>KRA Tax Filing</li>
-        <li>Passport Application</li>
-        {/* Add more online services as needed */}
+        {onlineServices.map((service, index) => (
+          <li key={index} className="service-item">{service}</li>
+        ))}
       </ul>
     </div>
   );

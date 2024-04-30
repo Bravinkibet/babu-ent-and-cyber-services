@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import '../App.css';
+import OnlineServices from './OnlineServices';
+import PrintingServices from './PrintingServices';
+import MovieServices from './MovieServices';
 
 function BabuEnt() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredServices, setFilteredServices] = useState([]);
 
   const services = [
-    "Browsing the Internet",
     "Printing documents",
     "Scanning documents",
-    "Movie - Ksh 20",
-    "Series - Ksh 30",
-    "Series with A,B parts - Ksh 50",
-    "KRA (Kenya Revenue Authority) services",
-    "Passport application assistance",
-    "Passport picture services",
+    "Lamination",
     "Picture printing",
     "Photocopying",
     "Binding",
-    "Lamination",
+    "Passport picture services",
+    "Faxing",
     "Typing services",
     "Document translation",
     "Computer repairs",
@@ -31,6 +29,14 @@ function BabuEnt() {
     "Event ticket printing",
     "Invitation card printing",
     "Document scanning to PDF",
+    "Audio/video editing services",
+    "CD/DVD burning services",
+    "Browsing the Internet",
+    "KRA (Kenya Revenue Authority) services",
+    "Passport application assistance",
+    "Series - Ksh 30",
+    "Movie - Ksh 20",
+    "Series with A,B parts - Ksh 50",
     // Add more services here
   ];
 
@@ -53,7 +59,7 @@ function BabuEnt() {
           type="text"
           value={searchQuery}
           onChange={handleSearchChange}
-          placeholder="Enter service"
+          placeholder="Enter service name"
         />
         <button onClick={handleSearchSubmit}>Search</button>
       </div>
@@ -68,17 +74,14 @@ function BabuEnt() {
         </ul>
       </div>
 
-      {/* External Links */}
-      <div className="external-links">
-        <h2>External Links:</h2>
-        <ul>
-          <li className="external-link-item">
-            <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">
-              IMDb Movies
-            </a>
-          </li>
-        </ul>
-      </div>
+      {/* Printing Services */}
+      <PrintingServices />
+
+      {/* Online Services */}
+      <OnlineServices />
+
+      {/* Movie Services */}
+      <MovieServices />
     </div>
   );
 }
