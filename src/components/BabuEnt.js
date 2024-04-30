@@ -1,71 +1,84 @@
 import React, { useState } from 'react';
-import OnlineServices from './OnlineServices';
-import PrintingServices from './PrintingServices';
-import MovieServices from './MovieServices';
+import '../App.css';
 
 function BabuEnt() {
-  // State for search query
   const [searchQuery, setSearchQuery] = useState('');
+  const [filteredServices, setFilteredServices] = useState([]);
 
-  // Function to handle search query change
+  const services = [
+    "Browsing the Internet",
+    "Printing documents",
+    "Scanning documents",
+    "Movie - Ksh 20",
+    "Series - Ksh 30",
+    "Series with A,B parts - Ksh 50",
+    "KRA (Kenya Revenue Authority) services",
+    "Passport application assistance",
+    "Passport picture services",
+    "Picture printing",
+    "Photocopying",
+    "Binding",
+    "Lamination",
+    "Typing services",
+    "Document translation",
+    "Computer repairs",
+    "Windows Software installation",
+    "Computer training",
+    "Email services",
+    "Resume/CV writing assistance",
+    "Job application assistance",
+    "Online form filling assistance",
+    "Event ticket printing",
+    "Invitation card printing",
+    "Document scanning to PDF",
+    // Add more services here
+  ];
+
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
-  // Function to handle search submission
   const handleSearchSubmit = () => {
-    // Implement search functionality here
-    alert(`Searching for: ${searchQuery}`);
+    const filtered = services.filter(service => service.toLowerCase().includes(searchQuery.toLowerCase()));
+    setFilteredServices(filtered);
   };
 
   return (
-    <div>
-      <h1>Welcome to Babu Ent and Cyber services</h1>
+    <div className="BabuEnt">
+      <h1>Welcome to Babu Ent & Cyber Services</h1>
 
       {/* Search Panel */}
-      <div style={{ marginBottom: '20px' }}>
+      <div className="search-panel">
         <input
           type="text"
           value={searchQuery}
           onChange={handleSearchChange}
-          placeholder="Enter search query..."
+          placeholder="Enter service"
         />
         <button onClick={handleSearchSubmit}>Search</button>
       </div>
 
-      {/* Services Offered */}
-      <h2>Services Offered:</h2>
-      <ul>
-        <li>Browsing the Internet</li>
-        <li>Printing documents (Charges: Ksh 5 per page)</li>
-        <li>Scanning documents (Charges: Ksh 10 per page)</li>
-        <li>
-          Movies/Series:
-          <ul>
-            <li>
-              Movie - Ksh 20
-            </li>
-            <li>
-              Series - Ksh 30
-            </li>
-            <li>
-              Series with A,B parts - Ksh 50
-            </li>
-          </ul>
-        </li>
-        {/* Add more services */}
-      </ul>
+      {/* Display Services */}
+      <div className="services">
+        <h2>Services Offered:</h2>
+        <ul>
+          {(filteredServices.length > 0 ? filteredServices : services).map((service, index) => (
+            <li key={index} className="service-item">{service}</li>
+          ))}
+        </ul>
+      </div>
 
       {/* External Links */}
-      <h2>External Links:</h2>
-      <ul>
-        <li>
-          <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">
-            IMDb Movies
-          </a>
-        </li>
-        {/* Add more external links as needed */}
-      </ul>
+      <div className="external-links">
+        <h2>External Links:</h2>
+        <ul>
+          <li className="external-link-item">
+            <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">
+              IMDb Movies
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

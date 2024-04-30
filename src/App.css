@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* Define bright colors */
+:root {
+  --bright-yellow: #FFD700;
+  --bright-orange: #FFA500;
+  --bright-green: #00FF00;
+  --bright-pink: #FF69B4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.BabuEnt {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-image: url('https://img.freepik.com/premium-vector/cyber-security-fingerprint-dark-blue-abstract-digital-conceptual-technology-background_87946-472.jpg?w=360');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #333; /* Default text color */
+  padding: 20px; /* Add padding for better readability */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  color: var(--bright-yellow);
+  margin-bottom: 20px; /* Add margin below h1 for better spacing */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h2 {
+  color: var(--bright-orange);
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li {
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: var(--bright-green);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--bright-pink);
+}
+
+.services {
+  margin-top: 20px;
+  background-image: url('https://img.freepik.com/premium-vector/cyber-security-fingerprint-dark-blue-abstract-digital-conceptual-technology-background_87946-472.jpg?w=360');
+ background-size: cover;
+}
+
+.service-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+  border-radius: 4px;
+}
+
+.external-links {
+  margin-top: 20px;
+}
+
+.external-link-item {
+  margin-bottom: 10px;
 }

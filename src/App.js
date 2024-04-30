@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.css'; // Import your CSS file if you have one
-import BabuEnt from './components/BabuEnt'; // Main component
-import OnlineServices from './components/OnlineServices'; // Online services component
-import PrintingServices from './components/PrintingServices'; // Printing services component
-import MovieServices from './components/MovieServices'; // Movie services component
+import './App.css';
+import BabuEnt from './components/BabuEnt';
+import OnlineServices from './components/OnlineServices';
+import PrintingServices from './components/PrintingServices';
+import MovieServices from './components/MovieServices';
 
 function App() {
   return (
